@@ -16,7 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="VQooks"
+            />
+        <activity
+            android:name=".IngredientsActivity"
+            android:label="Ingredients"
+            android:parentActivityName=".MainActivity"
+            />
+        <activity
+            android:name=".RecipeActivity"
+            android:label="Recipes"
+            android:parentActivityName=".MainActivity"
+            >
+
+        </activity>
     </application>
 
 </manifest>
