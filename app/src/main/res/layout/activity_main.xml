@@ -3,45 +3,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.vq.vqooks.MainActivity"
+    android:background="@drawable/main_activity_wallpaper"
     android:padding="16dp"
-    android:background="@drawable/main_activity_wallpaper">
+    tools:context="com.vq.vqooks.MainActivity">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Cook From"
-    android:textSize="24dp"
-    android:textColor="#000000"
-    android:layout_centerHorizontal="true"
-
-    />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="72dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        >
-    <Button
-        android:id="@+id/ingredients"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingredients"
+        android:text="Cook From"
+
+        android:textColor="#000000"
+        android:textSize="28dp"
 
         />
 
-    <Button
-        android:id="@+id/recipes"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Recipes"
-        android:layout_toRightOf="@id/ingredients"
-        />
+        android:orientation="horizontal"
+        android:layout_marginTop="70dp">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                >
+            <Button
+                android:id="@+id/ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ingredients"
+
+                android:background="@android:color/transparent"
+                />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="12dp"
+                    android:layout_below="@id/ingredients"
+                    android:text="description here"
+
+                    />
+            </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <Button
+                android:id="@+id/recipes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Recipes"
+                android:background="@android:color/transparent"
+            />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recipes"
+                android:padding="12dp"
+                android:text="description here"
+
+
+                />
+
+        </RelativeLayout>
     </LinearLayout>
-    </LinearLayout>
+
+
 </RelativeLayout>
