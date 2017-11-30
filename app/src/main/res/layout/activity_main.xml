@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context="com.vq.vqooks.MainActivity"
     android:padding="16dp"
-    >
+    android:background="@drawable/main_activity_wallpaper">
 
 <TextView
     android:layout_width="wrap_content"
