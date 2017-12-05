@@ -18,20 +18,16 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:label="VQooks"
-            />
+            android:label="VQooks" />
         <activity
             android:name=".IngredientsActivity"
             android:label="Ingredients"
-            android:parentActivityName=".MainActivity"
-            />
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".RecipeActivity"
             android:label="Recipes"
-            android:parentActivityName=".MainActivity"
-            >
-
-        </activity>
+            android:parentActivityName=".MainActivity"></activity>
+        <activity android:name=".DetailedRecipe"></activity>
     </application>
 
 </manifest>
