@@ -23,13 +23,9 @@ public class DetailedRecipe extends AppCompatActivity {
 
         TextView instruction = (TextView) findViewById(R.id.instruction_detailed);
         instruction.setText(getRecipes.getInstruction());
+
         TextView ingredients = (TextView) findViewById(R.id.ingredients_detailed);
-        StringBuilder ingHolder = new StringBuilder();
-        for(int x = 0; x < getRecipes.getIngredients().size();x++)
-        {
-            ingHolder.append("- "+getRecipes.getIngredients().get(x) + "\n");
-        }
-        ingredients.setText(ingHolder.toString());
+        ingredients.setText(getRecipes.getIngredients());
 
     }
 

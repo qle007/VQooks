@@ -18,8 +18,6 @@ package com.vq.vqooks;
 import android.text.TextUtils;
 import android.util.Log;
 
-import com.vq.vqooks.Recipes;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,7 +46,7 @@ public final class Utils {
     /**
      * Query the USGS dataset and return an {@link Recipes} object to represent a single earthquake.
      */
-    public static Recipes fetchEarthquakeData(String requestUrl) {
+    public static ArrayList<Recipes> fetchEarthquakeData(String requestUrl) {
         // Create URL object
         URL url = createUrl(requestUrl);
 
@@ -61,10 +59,10 @@ public final class Utils {
         }
 
         // Extract relevant fields from the JSON response and create an {@link Event} object
-        Recipes recipe = extractFeatureFromJson(jsonResponse);
+        ArrayList<Recipes> recipe = extractFeatureFromJson(jsonResponse);
 
         // Return the {@link Event}
-        return earthquake;
+        return recipe;
     }
 
     /**
@@ -163,7 +161,7 @@ public final class Utils {
                 String ingredients = object.getString("ingredients");
                 String instruction = object.getString("instruction");
                 ///Continue here!!!!!!!!!!!!!!!!!!!!!!!!!!
-                returnRecipes.add(name,ingredients,instruction);
+                returnRecipes.add( new Recipes(name,ingredients,instruction,R.drawable.main_activity_wallpaper));
                 // Create a new {@link Recipes} arraylist
 
             }
