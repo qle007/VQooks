@@ -1,7 +1,6 @@
 package com.vq.vqooks;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * Created by Quoc on 12/4/2017.
@@ -11,7 +10,7 @@ public class Recipes implements Serializable {
 
 
     private String name;
-    private ArrayList<String> ingredients = new ArrayList();
+    private String ingredients;
     private String instruction;
     private int imageResourceId;
 
@@ -32,11 +31,11 @@ public class Recipes implements Serializable {
         this.name = name;
     }
 
-    public ArrayList<String> getIngredients() {
+    public String getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(ArrayList<String> ingredients) {
+    public void setIngredients(String ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -49,7 +48,7 @@ public class Recipes implements Serializable {
     }
 
 
-    public Recipes(String name, ArrayList<String> ingredients, String instruction, int imageResourceId) {
+    public Recipes(String name, String ingredients, String instruction, int imageResourceId) {
         this.name = name;
         this.ingredients = ingredients;
         this.instruction = instruction;

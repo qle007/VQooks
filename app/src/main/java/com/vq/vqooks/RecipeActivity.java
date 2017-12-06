@@ -1,6 +1,7 @@
 package com.vq.vqooks;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,29 +11,16 @@ import android.widget.GridView;
 import java.util.ArrayList;
 
 public class RecipeActivity extends AppCompatActivity {
-
+    public static final String JSON_URL = "https://script.googleusercontent.com/macros/echo?user_content_key=0bvTgW45juVa36Z93aeI8lGY2BHdaQiOyZzDbpCtCga5NfiAeXt35MnlGGAGgyygu62nbyePX0aJuRExrRH4X-wGBb4uLGmZOJmA1Yb3SEsKFZqtv3DaNYcMrmhZHmUMWojr9NvTBuBLhyHCd5hHa1GhPSVukpSQTydEwAEXFXgt_wltjJcH3XHUaaPC1fv5o9XyvOto09QuWI89K6KjOu0SP2F-BdwUZ4b7a-V8nwzBYbGN1e34Agsp_zP0LsoF3VlgMkKHcfUYd3DJYKwwnzUS-UfIte535y7FLqOV0Tk27B8Rh4QJTQ&lib=MnrE7b2I2PjfH799VodkCPiQjIVyBAxva";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_recipe);
 
         ArrayList<Recipes> recipes = new ArrayList<>();
-        ArrayList<String> ingredients = new ArrayList<>();
-        ingredients.add("eggs");
-        ingredients.add("sat");
-        ingredients.add("pepper");
-        ingredients.add("vegie");
-        recipes.add(new Recipes("Omelette", ingredients, "cook it really well", R.drawable.main_activity_wallpaper));
-        ingredients = new ArrayList<>();
-        ingredients.add("sausage");
-        ingredients.add("pasta");
-        ingredients.add("sauce");
-        recipes.add(new Recipes("Sausage Pasta", ingredients, "cook it really well", R.drawable.main_activity_wallpaper));
-        ingredients = new ArrayList<>();
-        ingredients.add("Rice");
-        ingredients.add("spice sausage");
-        ingredients.add("vegie");
-        recipes.add(new Recipes("Fried Rice", ingredients, "cook", R.drawable.main_activity_wallpaper));
+        recipes.add(new Recipes("Omelette", "- eggs", "cook it really well", R.drawable.main_activity_wallpaper));
+        recipes.add(new Recipes("Sausage Pasta", "sausage", "cook it really well", R.drawable.main_activity_wallpaper));
+        recipes.add(new Recipes("Fried Rice", "rice", "cook", R.drawable.main_activity_wallpaper));
 
 
         GridView recipesGridView = (GridView) findViewById(R.id.list);
@@ -51,5 +39,13 @@ public class RecipeActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private class RecipeAsyncTask extends AsyncTask<String, Void, View>
+    {
+
+        @Override
+        protected View doInBackground(String... strings) {
+            return null;
+        }
     }
 }
