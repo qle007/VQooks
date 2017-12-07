@@ -24,9 +24,9 @@ public class RecipeActivity extends AppCompatActivity {
 
     }
 
-    private void updateUi(ArrayList<Recipes> recipes) {
+    private void updateUi(ArrayList<Recipes> recipe) {
         GridView recipesGridView = (GridView) findViewById(R.id.list);
-        final RecipesAdapter adapter = new RecipesAdapter(this, recipes);
+        final RecipesAdapter adapter = new RecipesAdapter(this, recipe);
         recipesGridView.setAdapter(adapter);
 
         recipesGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -49,9 +49,10 @@ public class RecipeActivity extends AppCompatActivity {
             ArrayList<Recipes> recipe = Utils.fetchEarthquakeData(JSON_URL);
             return recipe;
         }
-        protected void onPostExecute(ArrayList<Recipes> recipes)
+        @Override
+        protected void onPostExecute(ArrayList<Recipes> recipe)
         {
-            updateUi(recipes);
+            updateUi(recipe);
         }
     }
 }
